@@ -1,0 +1,9 @@
+[package]
+name = "harfbuzz"
+version = "0.1.0"
+authors = ["johncf <johncf@protonmail.com>"]
+
+[dependencies]
+libc = "0.2"
+glib = "0.1"
+harfbuzz-sys = { path = "./harfbuzz-sys", features = ["v0_9_2"] }

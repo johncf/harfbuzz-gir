@@ -1,0 +1,40 @@
+[build-dependencies]
+pkg-config = "0.3.7"
+
+[dependencies]
+bitflags = "0.9"
+freetype-sys = "0.4"
+glib-sys = "0.3"
+gobject-sys = "0.3"
+libc = "0.2"
+
+[features]
+v0_9_10 = ["v0_9_8"]
+v0_9_11 = ["v0_9_10"]
+v0_9_2 = []
+v0_9_20 = ["v0_9_11"]
+v0_9_22 = ["v0_9_20"]
+v0_9_28 = ["v0_9_22"]
+v0_9_30 = ["v0_9_28"]
+v0_9_31 = ["v0_9_30"]
+v0_9_38 = ["v0_9_31"]
+v0_9_39 = ["v0_9_38"]
+v0_9_41 = ["v0_9_39"]
+v0_9_42 = ["v0_9_41"]
+v0_9_5 = ["v0_9_2"]
+v0_9_7 = ["v0_9_5"]
+v0_9_8 = ["v0_9_7"]
+v1_0_5 = ["v0_9_42"]
+v1_1_2 = ["v1_0_5"]
+v1_1_3 = ["v1_1_2"]
+v1_2_3 = ["v1_1_3"]
+v1_3_3 = ["v1_2_3"]
+v1_4_2 = ["v1_3_3"]
+v1_4_3 = ["v1_4_2"]
+
+[package]
+authors = ["johncf <johncf@protonmail.com>"]
+build = "build.rs"
+links = "harf_buzz"
+name = "harfbuzz-sys"
+version = "0.1.0"

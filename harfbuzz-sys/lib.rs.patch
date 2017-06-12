@@ -1,0 +1,30 @@
+10c10
+< extern crate freetype2_sys as freetype2;
+---
+> extern crate freetype_sys as freetype2;
+715,716c715,716
+< pub const HB_OT_LAYOUT_NO_VARIATIONS_INDEX: c_int = 4294967295;
+< pub const HB_OT_VAR_NO_AXIS_INDEX: c_int = 4294967295;
+---
+> pub const HB_OT_LAYOUT_NO_VARIATIONS_INDEX: u32 = 4294967295;
+> pub const HB_OT_VAR_NO_AXIS_INDEX: u32 = 4294967295;
+754c754
+< pub type hb_var_int_t = c_void; // union
+---
+> pub type hb_var_int_t = u32; // union of size 32 bits
+833,835c833,836
+<     _truncated_record_marker: c_void,
+<     //union,
+<     //union,
+---
+> 
+>     /*< private >*/
+>     pub var1: hb_var_int_t,
+>     pub var2: hb_var_int_t,
+844,845c845,847
+<     _truncated_record_marker: c_void,
+<     //union,
+---
+> 
+>     /*< private >*/
+>     pub var: hb_var_int_t,

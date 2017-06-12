@@ -1,0 +1,52 @@
+9a10,11
+>   <include name="freetype2" version="2.0"/>
+>   <package name="harfbuzz"/>
+4146c4148
+<           <type c:type="FT_Face"/>
+---
+>           <type name="freetype2.Face" c:type="FT_Face"/>
+4162c4164
+<           <type c:type="FT_Face"/>
+---
+>           <type name="freetype2.Face" c:type="FT_Face"/>
+4175c4177
+<           <type c:type="FT_Face"/>
+---
+>           <type name="freetype2.Face" c:type="FT_Face"/>
+4191c4193
+<           <type c:type="FT_Face"/>
+---
+>           <type name="freetype2.Face" c:type="FT_Face"/>
+4207c4209
+<           <type c:type="FT_Face"/>
+---
+>           <type name="freetype2.Face" c:type="FT_Face"/>
+4215c4217
+<         <type c:type="FT_Face"/>
+---
+>         <type name="freetype2.Face" c:type="FT_Face"/>
+4382,4405d4383
+<     <function name="graphite2_face_get_gr_face"
+<               c:identifier="hb_graphite2_face_get_gr_face"
+<               introspectable="0">
+<       <return-value>
+<         <type c:type="gr_face*"/>
+<       </return-value>
+<       <parameters>
+<         <parameter name="face" transfer-ownership="none">
+<           <type name="face_t" c:type="hb_face_t*"/>
+<         </parameter>
+<       </parameters>
+<     </function>
+<     <function name="graphite2_font_get_gr_font"
+<               c:identifier="hb_graphite2_font_get_gr_font"
+<               introspectable="0">
+<       <return-value>
+<         <type c:type="gr_font*"/>
+<       </return-value>
+<       <parameters>
+<         <parameter name="font" transfer-ownership="none">
+<           <type name="font_t" c:type="hb_font_t*"/>
+<         </parameter>
+<       </parameters>
+<     </function>
