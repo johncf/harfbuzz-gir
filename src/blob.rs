@@ -1,6 +1,6 @@
 use glib::translate::*;
 use ffi;
-use super::{closure_into_raw, closure_trampoline};
+use super::DestroyFunc;
 
 use std::marker::PhantomData;
 
@@ -51,15 +51,13 @@ impl<'a> Drop for Blob<'a> {
 }
 
 impl<'a> Blob<'a> {
-    pub fn create<F>(data: &'a [u8], destroy: F) -> Blob<'a>
-        where F: FnOnce() + 'static,
-    {
-        let destroy = closure_into_raw(destroy);
+    pub fn create(data: &'a [u8], destroy: Option<DestroyFunc>) -> Blob<'a> {
+        let (destroy_data, destroy_func) = DestroyFunc::maybe_raw(destroy);
         unsafe {
             from_glib_full(ffi::hb_blob_create(data.as_ptr() as *const i8,
                                                data.len() as u32,
                                                ffi::hb_memory_mode_t::Readonly,
-                                               destroy, Some(closure_trampoline)))
+                                               destroy_data, destroy_func))
         }
     }
 }
